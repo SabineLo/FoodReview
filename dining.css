@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&display=swap');
 
+/*Something here was changed so update this on the website */
+/*The root bascially my color index that I didnt use :P because i decided last min to change entire color
+scheme*/
 :root{
     --yellow:#F2AF43;
     --black:#2B1600;
@@ -41,13 +44,13 @@ header{
     position:fixed;
     top:0; left: 0; right:0;
     /*change the color of nav bar*/
-    background: #ffffff;
+    background: #618985;
     padding:1rem 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index:1000;
-    box-shadow: var(--box-shadow);
+    
 }
 
 .header-container {
@@ -59,7 +62,7 @@ header{
 
 header .logo{
     /*the color of Food Review + size change to color scheme later*/
-    color:var(--black);
+    color:#F2E3BC;
     font-size:2.5rem;
     font-weight: bolder;
     margin-left: -1cm;
@@ -78,6 +81,7 @@ header .logo img{
     gap: 1rem;
     /*make it be in the middle*/
     margin-left: -3cm;
+    
 }
 
 .header-container .navbar a{
@@ -86,6 +90,7 @@ header .logo img{
     border-radius: .5rem;
     padding: .5rem 1.5rem;
     color:var(--black);
+    
 }
 
 
@@ -94,6 +99,10 @@ header .logo img{
     display: flex;
     gap: 1rem; /* Adjust spacing between icons */
     align-items: center;
+}
+
+header .icons #signup{
+    color: #414535;
 }
 
 /* Adjust icon sizes if needed */
@@ -130,8 +139,10 @@ header .icons #menu-bars{
 }
 
 .main .content p{
+    color: #2B1600;
     text-align: center;
-    font-size: small;
+    font-weight: 500;
+    font-size: medium;
     padding-bottom:100px ;
 }
 
@@ -174,7 +185,7 @@ textarea{
     font-weight: 100;
     padding:15px;
 }
-
+/*End of comment section*/
 
 /*Where the food is diplayed at for stars*/
 
@@ -219,7 +230,7 @@ textarea{
     margin-top: -5px;
 }
 
-/*size of image inside the dining hall thing */
+/*size of image inside food thing */
 .box-container .box img{
     margin:1rem 0;
     margin-left: -5rem;
@@ -228,6 +239,35 @@ textarea{
     width:120%;
     height: auto;
 }
+
+/**Warren food adjustment for photos will be changed once back in school to accurate photos*/
+
+.box-container .box .yogurt img{
+    width:400px;
+    height:350px;
+}
+
+.box-container .box .burger2 img{
+    width: 400px;
+    height: 340px;
+}
+
+.box-container .box .burger1 img{
+    width:350px;
+    height:330px;
+}
+
+.box-container .box .noodles img{
+    width:355px;
+    height:330px;
+}
+
+.box-container .box .sandwhich img{
+    width:400px;
+    height:335px;
+}
+
+/*End of photo sectiion*/
 
 .box-container .box h3{
     color:#414535;
@@ -261,32 +301,74 @@ textarea{
 }
 
 .progress-label-left{
+    
     float: left;
     margin-right: 0.5rem;
     line-height: 1em;
 }
 
 .progress-label-right {
+    
     float: right;
     margin-right: 0.3rem;
     line-height: 1em;
 }
 
+
 /**The review thinif 0 review*/
 #review_count{
-    margin-top: 12px;
+    color: #414535;
+    padding-bottom: 1cm;
 }
 
 /*color of 0/5*/
 #rating_0{
-    color: #222264;
+    font-family: 'Courier New', Courier, monospace;
+    color: #414535;
 }
 
+#average_rating{
+    font-family: 'Courier New', Courier, monospace;
+}
 
+/**Number nect to star*/
+#starnum{
+    color: #414535;
+}
 
+#add_review{
+   width:85px;
+   height:43px;
+   font-size: medium;
+   margin-top: -1rem;
+   background-color: #96BBBB;
+   border-color:#414535;
+   box-shadow: var(--box-shadow);
+   
+}
 
+#save_review{
+    background-color: #96BBBB;
+    color: #ffffff;
+    border-color: #242423;
+    box-shadow: var(--light-color);
+}
+.card{
+    box-shadow: var(--box-shadow);
+}
 
+.card .card-header{
+    background-color:#96BBBB;
+    color: #414535;
+    font-size: medium;
+    box-shadow: var(--box-shadow);
+}
 
+.card .card-body{
+    padding-top:1cm ;
+    background-color: #F2E3BC;
+    
+}
 
 
 /*media querires*/
@@ -304,12 +386,18 @@ textarea{
     }
 }
 
+/**This the phone preety sure*/
+
 @media(max-width:768px){
     header .icons #menu-bars{
+        color: #414535;
         display:inline-block;
     }
 
-    
+    header .icons #signup{
+        color: #414535;
+    }
+
     
 
     header .navbar{
@@ -342,9 +430,82 @@ textarea{
     .header-container .navbar{
         margin-left: 0cm;
     }
+    /*da logo foodreview*/
+    header .logo img{
+        width: 65px;
+        margin-left: -1.5cm;
+    }
 
+    /** FIX IF ISSUES Adjusting the size of the boxes I want two on eiter side*/
+    .box-container{
+      
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(13rem, 1fr));
+        gap:1rem;
+    }
+
+    /*Food container images*/
+
+    .box-container .box img{
+       
+       width: 152%;
+       height: auto;
+    }
+
+    .box-container .box .yogurt img{
+        width:155px;
+        height:153px;
+    }
+
+    .box-container .box .burger2 img{
+        width: 155px;
+        height: 150px;
+    }
+
+    .box-container .box .burger1 img{
+        width:155px;
+        height:160px;
+    }
+
+    .box-container .box .noodles img{
+        width:185px;
+        height:160px;
+    }
     
+    .box-container .box .sandwhich img{
+        width:185px;
+        height:160px;
+    }
+    
+    /***End of food container images**/
+    /**The circl icon*/
+    .rounded-circle{
+        width:30px;
+        height:29px;
+    }
+    
+
+    .main .content p{
+        margin-bottom: -1.5cm;
+    }
    
+    .card .card-header{
+        font-size: small;
+        box-shadow: var(--box-shadow);
+    }
+    
+    #review_count{
+        margin-bottom: -1cm;
+    }
+    #add_review{
+        margin-top: -1cm;
+        font-size: medium;
+        width:90px;
+        height: 40px;
+        border-style: ridge;
+    }
+
+
 }
 
 @media(max-width:991px){

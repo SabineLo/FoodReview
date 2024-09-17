@@ -65,7 +65,6 @@ section:nth-child(even){
 
 
 
-
 header{
     position:fixed;
     top:0; left: 0; right:0;
@@ -114,7 +113,7 @@ header .logo img{
     font-size:1.9rem;
     border-radius: .5rem;
     padding: .5rem 1.5rem;
-    color:#F2E3BC;
+    color:var(--black);
 }
 
 
@@ -131,6 +130,9 @@ header .logo img{
     color: var(--light-color); /* Adjust color if needed */
 }
 
+header .icons #signup{
+    color: #414535;
+}
 
 /*the hover bar and home button*/
 header .navbar a:hover{
@@ -146,69 +148,60 @@ header .icons a{
 
 /*makes sure it is not displayed */
 header .icons #menu-bars{
+   
     display:none;
 }
 
-.home .home-slider .slide{
+
+.swiper {
+    width: 105%;
+    height: 110%;
+  }
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #F2E3BC;
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-wrap:wrap;
-    gap:9rem;
-    padding-top:9rem;
-}
+  }
 
-.home .home-slider .slide .content{
-    flex:1 1 45rem;
-}
 
-.home .home-slider .slide .image{
-    flex:1 1 45rem;
-}
-
-/*to fix the image to maek better later*/
-.home .home-slider .slide .image img{
+.swiper-slide img {
+    margin-top: 4cm;
+    margin-left: 1cm;
+    margin-bottom: 1cm;
+    display: block;
     width:80%;
-    margin-top: 5rem;
-    /**margin-left: -10rem;*/
-    margin-bottom: 5rem;
     border-radius: 100%;
-    overflow: hidden;
-}
+    object-fit: cover;
+  }
 
-.home .home-slider .slide .content span{
-    /*can change the color Rate the Food is in green change to diff / also font*/
+.swiper-slide .content h3{
+   color:#414535;
+   font-size: 5rem;
+  }
+
+.swiper-slide .content p{
+   color:var(--light-color);
+   font-size: 2.2rem;
+  }
+ 
+.swiper-slide .content span{
     color:#366c7b;
     font-size: 3rem;
-    overflow: hidden;
 }
 
-.home .home-slider .slide .content h3{
-    color:#414535;
-    font-size: 7rem;
-    overflow: hidden;
+.swiper-button-next{
+    color:#366c7b;
 }
 
-.home .home-slider .slide .content p{
-    color:var(--light-color);
-    font-size: 2.2rem;
-    padding:.5rem 0;
-    line-height: 1.5;
-    overflow: hidden;
+.swiper-button-previous{
+    color:#FFDD83;
 }
 
-.home .home-slider {
-    position: relative;
-}
 
-.swiper-pagination-bullet-active{
-    /*the little circle in the bottom change the color*/
-    background: #366c7b;
-}
-
-/*the size of the content all together*/
-.home .home-slider .slide .content h3{
-    font-size:5rem;
-}
 
 .dishes .box-container{
     display: grid;
@@ -271,27 +264,17 @@ header .icons #menu-bars{
 }
 
 
-
-
-.about .row{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-    flex-direction: row-reverse;
-    
+.about .content p{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 250;
 }
 
-.about .row .image{
-    flex:1 1 45rem;
-}
 
-.about .row .image img{
-    width: 55%;
-}
    
 .about .image img{
-    margin-left: 13cm;
+    margin-left: 12cm;
+    width: 25%;
 }
 
 .footer .box-container{
@@ -341,7 +324,7 @@ header .icons #menu-bars{
     background-size: cover; /* Ensure the hover image covers the area */
 }
 
-
+/*might be phone*/
 /*media quieres*/
 @media(max-width:991px){
     html{
@@ -357,44 +340,102 @@ header .icons #menu-bars{
     }
 
     .home .home-slider .slide .image img{
-        width:85%;
+        width:83%;
         border-radius: 100%;
         margin: 1cm;
+        margin-top: -1rem;
 }
 
-.home .home-slider .slide .content span{
-    /*can change the color Rate the Food is in green change to diff / also font*/
-    font-size: 2rem;
-    overflow: hidden;
-}
+    .home .home-slider .slide .content span{
+        /*can change the color Rate the Food is in green change to diff / also font*/
+        
+        font-size: 2rem;
+        overflow: hidden;
+    }
 
-.home .home-slider .slide .content h3{
-    font-size: 5rem;
-    overflow: hidden;
-}
+    .home .home-slider .slide .content h3{
+        text-align: center;
+        font-size: 5rem;
+        overflow: hidden;
+    }
 
-.home .home-slider .slide .content p{
-    padding:.5rem 0;
-    line-height: 1.5;
-    overflow: hidden;
-}
+    .home .home-slider .slide .content p{
+        text-align: center;
+        margin-bottom: -1.5rem;
+        padding:.5rem 0;
+        line-height: 1.5;
+        overflow: hidden;
+    }
 
-header .logo img{
-    width: 65px;
-   
+
+    header .logo img{
+        width: 65px;
+        margin-left: -1.5cm;
+    }
+
+    .about .image img{
+        margin-left: 6cm;
+    }
+
+    .dishes .box-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(20rem, 1fr));
+        gap:1.5rem;
+    }
+
+    .dishes .box-container .box img{
+        margin-left: -2.6rem;
+        margin-top: -2.5rem;
+        margin-bottom: -5rem;
+        width:126%;
+        height: auto;
+    }
+
+    /**Swiper fix */
+    .swiper-slide img {
+        margin-top: 3cm;
+        margin-left: 1cm;
+        width:70%;
+      
+      }
     
-}
-.about .image img{
-    margin-left: 5cm;
-}
+    /*The middle one*/
+    .swiper-slide .content h3{
+       font-size: 3rem;
+      }
+    /*The little paragraph*/
+    .swiper-slide .content p{
+       font-size: 1.5rem;
+       margin-bottom: -1cm;
+      }
+     
+    /*The Rate the Food*/
+    .swiper-slide .content span{
+        font-size: 1.5rem;
+    }
+    
+    .swiper-slider .content{
+        margin-top: 1cm;
+    }
 
 
 }
 
+/**I think the phone size this or the one above*/
 @media(max-width:768px){
     header .icons #menu-bars{
+        color: #414535;
         display:inline-block;
     }
+
+    header .icons #signup{
+        color: #414535;
+    }
+
+    .about .content p{
+        font-size: 12px;
+    }
+
 
     
     
@@ -431,9 +472,11 @@ header .logo img{
     }
 
     
+    
    
 }
 
+/**diff**/
 @media(max-width:991px){
     html{
         font-size:50%;
