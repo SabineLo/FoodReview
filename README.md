@@ -8,5 +8,8 @@ Only thing needed for this to be completly finished is photos of the food
 
 Potential Additions:
 
-Coin flip so no need to decide where to eat.
+-Coin flip so no need to decide where to eat.
+
+Must Add:
+-Add the links to corresponding place in footer
 
